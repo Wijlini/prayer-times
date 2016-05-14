@@ -308,10 +308,10 @@ namespace PrayerTimes
             if (timeZone == null)
                 timeZone = date.Offset.Hours;
 
-            int dstOffset = 1;
+            int dstOffset = 0;
             if (date.LocalDateTime.IsDaylightSavingTime())
             {
-                dstOffset = 0;
+                dstOffset = -1;
             }
 
             return timeZone.Value - dstOffset;
